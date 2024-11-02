@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="d266139c83995210adeff6d6feaad311" label="Suggestion" max_length="40" name="x_1259159_to_do_suggestion" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="1" label="Closed date" max_length="40" name="closed_date" type="glide_date">
+            <choice/>
+        </element>
+        <element label="Submitter" max_length="32" name="submitter" reference="sys_user" type="reference"/>
+        <element choice="1" default="Under Review" dependent="suggestion" dependent_on_field="suggestion" label="Status" max_length="40" name="status" type="choice" use_dependent_field="true">
+            <choice>
+                <element inactive_on_update="false" label="In Progress" sequence="2" value="In Progress"/>
+                <element inactive_on_update="false" label="Implemented" sequence="3" value="Implemented"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="New"/>
+                <element inactive_on_update="false" label="Deferred" sequence="4" value="Deferred"/>
+                <element inactive_on_update="false" label="Under Review" sequence="1" value="Under Review"/>
+                <element inactive_on_update="false" label="Declined" sequence="5" value="Declined"/>
+            </choice>
+        </element>
+        <element label="Submission date" max_length="40" name="submission_date" type="glide_date"/>
+        <element display="true" label="Suggestion" max_length="40" name="suggestion" type="string"/>
+        <element label="Description" max_length="4000" name="description" type="string"/>
+        <index name="index">
+            <element name="submitter"/>
+        </index>
+    </element>
+</database>
